@@ -1,0 +1,49 @@
+.row{
+    width: 100%;
+    margin-left: 10px;
+}
+
+
+
+.avatar {
+    display: flex;
+    gap: 10px;
+}
+
+/* img {
+    height:40px;
+    width: 80px;
+} */
+
+.avatar-image {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 72px;
+    height: 30px;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.progress-bar {
+    border-bottom-style: dashed;
+    border-color: goldenrod;
+    margin-top: 6px;
+}
+
+.name-container {
+    width: 100px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.score-container{
+    text-align: center;
+}
