@@ -2,7 +2,7 @@ import './index.css'
 
 export const ScoreboardItem = ({name, score}) => {
     return(
-        <table class="row">
+        <table className="row">
             <tr>
                 <td width="90%">
                     <div className='progress-bar'>
@@ -10,8 +10,8 @@ export const ScoreboardItem = ({name, score}) => {
                             <div className='name-container'>
                                 {name}
                             </div>
-                            <div className='avatar-image' style={{backgroundImage: "url('https://data.typeracer.com/public/images/avatars/mobil3.svg')"}}>
-                                {/* <img src="https://data.typeracer.com/public/images/avatars/mobil3.svg" alt="hui" /> */}
+                            <div className='avatar-image' style={{backgroundImage: "url('https://flyclipart.com/thumb2/pixel-art-car-icons-png-155992.png')"}}>
+                                {/* <img src="https://data.typeracer.com/public/images/avatars/mobil3.svg" alt="" /> */}
                             </div>
                         </div>
                     </div>

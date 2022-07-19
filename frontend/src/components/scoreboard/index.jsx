@@ -1,10 +1,10 @@
 import './index.css'
 import { ScoreboardItem } from '../scoreboardItem/index.jsx'
 
-export const Scoreboard = () => {
+export const Scoreboard = ({score}) => {
     return(
         <div className='scoreboard'>
-                <ScoreboardItem name="Murat" score="39" />
+                <ScoreboardItem name="Murat" score={score} />
                 <ScoreboardItem name="Beknar" score="49" />
                 <ScoreboardItem name="Aidar" score="58" />
                 <ScoreboardItem name="Zhanibek" score="19" />

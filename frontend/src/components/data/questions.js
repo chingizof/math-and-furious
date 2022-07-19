@@ -1,4 +1,4 @@
-let questions = [
+export const questions = [
     { first: 78, sign: '+', second: 98, answer: 176 } ,
     { first: 100, sign: '+', second: 78, answer: 178 } ,
     { first: 46, sign: '+', second: 68, answer: 114 } ,
