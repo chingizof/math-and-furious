@@ -8,6 +8,8 @@ import Game from './pages/game.jsx'
 import { SignUp } from './pages/signUp.jsx';
 import { Login } from './pages/login.jsx';
 import { Leaderboard } from './pages/leaderboard.jsx';
+import { Home } from './pages/home.jsx'
+
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/game" element={<Game />} />
-        <Route index element={<Game />} />
+        <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         {/* <Route path="blogs" element={<Blogs />} /> */}

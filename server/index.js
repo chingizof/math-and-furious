@@ -12,6 +12,13 @@ app.post('/create', async (req, res) => {
     res.send({msg: "User Added"})
 })
 
+app.post('/login', async (req, res) => {
+    const login = req.body
+    const pass = req.body.pass
+
+    
+})
+
 app.get('/', async (req, res) => {
     const snapshot = await User.get()
     const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))

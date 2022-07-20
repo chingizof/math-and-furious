@@ -38,6 +38,8 @@ tr {
 
 .name-container {
     width: 100px;
+    font-weight: 500;
+    color: #638e8e;
     display: inline-block;
     overflow: hidden;
     text-align: right;
@@ -46,4 +48,6 @@ tr {
 
 .score-container{
     text-align: center;
+    font-weight: 500;
+    color: #638e8e;
 }

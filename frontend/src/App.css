@@ -8,3 +8,9 @@ div {
   display: block;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index:-1;
+  height: 0;
+}

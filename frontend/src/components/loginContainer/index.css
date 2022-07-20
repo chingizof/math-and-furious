@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+}
+
+.login-wrapper {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+}
+
+.login-image {
+    width: 60%;
+    height: 100%;
+    background-color: aquamarine;
+    background-image: url("https://www.ft.com/__assets/creatives/product/dynamic-barriers/markets.jpg");
+}
+
+.login-container {
+    width: 40%;
+    height: 100%;
+    margin-right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form {
+    width: 300px;
+    border-radius: 20px;
+    padding: 16px;
+    font-size: 14px;
+    background-color: #f6f8fa;
+    border: 1px solid hsl(210deg 18% 87%);
+}
+
+form {
+    display: block;
+}
+
+.form-control {
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: middle;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    box-shadow: rgb(208 215 222 / 20%);
+    width: 100%;
+    margin: 4px 0 16px;
+}
+
+.btn {
+    position: relative;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 6px;
+    appearance: none;
+    width: 100%;
+}
+
+label {
+    font-size: 14px;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #2da44e;
+    border-color: rgb(27 31 36 / 15%);
+    box-shadow: 0 1px 0 rgba(27,31,36,0.1);
+}
+
+.login-header {
+    text-align: center;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+    color: #24292f;
+}

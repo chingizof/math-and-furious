@@ -1,28 +1,18 @@
 import { AnswerInput } from '../answerInput'
+import { Timer } from '../timer'
+import { useState } from 'react'
 import './index.css'
 
 export const QuestionContainer = ({first, sign, second, answer, score, setScore}) => {
-    // let generateQuestion = (ques) => {
-    //     let inputedNumber = 1
-    //     console.log(inputedNumber)
-    //     if (inputedNumber === 1) {
-    //         return `Input ${ques['sign']} ${ques['second']} = ${ques['answer']}`
-    //     } else if (inputedNumber === 2) {
-    //         return `${ques['first']} ${ques['sign']} Input = ${ques['answer']}`
-    //     } else {
-    //         return `${ques['first']} ${ques['sign']} ${ques['second']} = Input`
-    //     }
-    // }
-
-    // generateQuestion()
-
+    const [playing, setPlaying] = useState(true)
 
     return(
         <div className='question-container'>
             {/* TIMER */}
+            <Timer playing={playing} setPlaying={setPlaying} />
             {/* QUESTION */}
-            <div className='question-content'>
-                <AnswerInput first={first} score={score} setScore={setScore}/> {sign} {second} = {answer}
+            <div className={`${playing ? 'question-content' : "hidden"}`}>
+                <AnswerInput first={first} score={score} setScore={setScore} playing={playing} setPlaying={setPlaying} /> {sign} {second} = {answer}
                 {/* Before answer // Input // After Answer */}
                 {/* answer input */}
             </div>

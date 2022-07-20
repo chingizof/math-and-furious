@@ -2,5 +2,6 @@
     margin-top: 80px;
     width: 100%;
     height: auto;
-    border: solid black 2px;
+    border: solid black 1px;
+    background-color: rgb(70, 70, 70);
 }

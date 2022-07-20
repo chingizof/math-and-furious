@@ -1,5 +1,5 @@
-import { SingInButton } from '../signInButton'
-import { SingUpButton } from '../signUpButton'
+import { SingInHeader } from '../loginHeader'
+import { SingUpHeader } from '../signUpHeader'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './index.css'
 
@@ -23,8 +23,8 @@ export const Header = () => {
                         </Link>
                     </div>
                     <div className='authentification'>
-                        <SingInButton />
-                        <SingUpButton />
+                        <SingInHeader />
+                        <SingUpHeader />
                     </div>
                 </div>
             </div>

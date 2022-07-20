@@ -1,6 +1,6 @@
 import './index.css'
 
-export const AnswerInput = ({first, score, setScore}) => {
+export const AnswerInput = ({first, score, setScore, playing, setPlaying}) => {
     let handleChange = () => {
         var val = document.getElementById('question-input').value
         if (parseInt(val)===first){
