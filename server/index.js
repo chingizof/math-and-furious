@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import {addUser, getAllUsers}  from './config.js'
+import {addUser, getAllUsers }  from './config.js'
 import { addDoc } from 'firebase/firestore'
 
 const User = {} 
@@ -14,6 +14,12 @@ app.post('/create', async (req, res) => {
     await addUser(data)
     res.status(200).send({msg: "User Added"})
 })
+
+// app.post('/google-signin', async (req,res) => {
+//     signInWithGoogle()
+//     console.log("llalalalal")
+//     res.status(200).send({msg: 'xsigned in'})
+// })
 
 app.post('/login', async (req, res) => {
     const login = req.body

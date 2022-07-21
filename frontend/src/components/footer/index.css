@@ -4,6 +4,7 @@
     color: #2e2a24;
     background-color: rgb(221, 221, 221);
     text-align: center;
+    float: bottom;
 }
 
 a, a:hover, a:focus, a:active {

@@ -1,5 +1,10 @@
 import { initializeApp } from 'firebase/app';
-import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore'
+
+
+import { getFirestore, query, getDocs, collection, where, addDoc}  from "firebase/firestore";
+
+import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCRq4ICuiJutH3Z_A3-JPMFAIinCeiT_kI",
@@ -14,8 +19,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
-
-
 const usersCollection = collection(db, "Users")
 
 
@@ -32,5 +35,31 @@ const addUser = async (body) => {
     console.error("Error creating user: ", e);
   }
 }
+
+const registerWithEmailAndPassword = async (name, email, password) => {
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(collection(db, "users"), {
+      uid: user.uid,
+      name,
+      authProvider: "local",
+      email,
+    });
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const logInWithEmailAndPassword = async (email, password) => {
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
 
 export { getAllUsers, addUser } //ES6 notation of module.exports = User
