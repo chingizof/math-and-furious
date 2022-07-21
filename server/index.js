@@ -1,6 +1,9 @@
 import express from 'express'
 import cors from 'cors'
-import User from './config.js'
+import {addUser, getAllUsers}  from './config.js'
+import { addDoc } from 'firebase/firestore'
+
+const User = {} 
 
 const app = express()
 app.use(express.json())
@@ -8,19 +11,17 @@ app.use(cors())
 
 app.post('/create', async (req, res) => {
     const data = req.body
-    await User.add(data)
-    res.send({msg: "User Added"})
+    await addUser(data)
+    res.status(200).send({msg: "User Added"})
 })
 
 app.post('/login', async (req, res) => {
     const login = req.body
     const pass = req.body.pass
-
-    
 })
 
 app.get('/', async (req, res) => {
-    const snapshot = await User.get()
+    const snapshot = await getAllUsers()
     const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
     res.send(list)
 })

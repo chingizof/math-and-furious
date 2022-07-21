@@ -1,5 +1,5 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
+import { initializeApp } from 'firebase/app';
+import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore'
 
 const firebaseConfig = {
     apiKey: "AIzaSyCRq4ICuiJutH3Z_A3-JPMFAIinCeiT_kI",
@@ -12,8 +12,25 @@ const firebaseConfig = {
     measurementId: "G-6M856T54EX"
   };
 
-firebase.initializeApp(firebaseConfig)
-const db = firebase.firestore()
-const User = db.collection("Users")
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app)
 
-export default User //ES6 notation of module.exports = User
+
+const usersCollection = collection(db, "Users")
+
+
+const getAllUsers = async () => {
+  const response = await getDocs(usersCollection);
+  return response
+}
+
+const addUser = async (body) => {
+  try {
+    const newUser = await addDoc(usersCollection, body);
+    console.log("User created with ID:", newUser.id);
+  } catch (e) {
+    console.error("Error creating user: ", e);
+  }
+}
+
+export { getAllUsers, addUser } //ES6 notation of module.exports = User
