@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import {addUser, getAllUsers }  from './config.js'
+import {addUser, getAllUsers, registerWithEmailAndPassword, logInWithEmailAndPassword, createNewGame }  from './config.js'
 import { addDoc } from 'firebase/firestore'
 
 const User = {} 
@@ -15,21 +15,31 @@ app.post('/create', async (req, res) => {
     res.status(200).send({msg: "User Added"})
 })
 
-// app.post('/google-signin', async (req,res) => {
-//     signInWithGoogle()
-//     console.log("llalalalal")
-//     res.status(200).send({msg: 'xsigned in'})
-// })
+app.post('/register', async (req,res) => {
+    const email = req.body.email
+    const login = req.body.name
+    const password = req.body.password
+    await registerWithEmailAndPassword(login, email, password)
+    res.status(200).send({msg:"Success"})
+})
+
 
 app.post('/login', async (req, res) => {
-    const login = req.body
-    const pass = req.body.pass
+    const email = req.body.email
+    const pass = req.body.password
+    await logInWithEmailAndPassword(email, pass)
+    res.status(200).send({msg:"Success"})
 })
 
 app.get('/', async (req, res) => {
     const snapshot = await getAllUsers()
     const list = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
     res.send(list)
+})
+
+app.post('/new-game', async (req, res) => {
+    createNewGame(req)
+    res.send("success")//
 })
 
 app.post('/update', async (req,res) => {

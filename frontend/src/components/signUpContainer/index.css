@@ -21,6 +21,8 @@ body {
     height: 100%;
     background-color: aquamarine;
     background-image: url("https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2Fb4f72a3f-bfc4-4d4f-9cc8-b27c86319554.jpg?dpr=2&fit=scale-down&quality=medium&source=next&width=700");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .signup-container {
@@ -32,6 +34,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 }
 
 .signup-form {
@@ -41,6 +44,7 @@ body {
     font-size: 14px;
     background-color: #f6f8fa;
     border: 1px solid hsl(210deg 18% 87%);
+    
 }
 
 form {

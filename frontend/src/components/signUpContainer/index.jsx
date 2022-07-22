@@ -5,9 +5,10 @@ export const SignUpContainer = () => {
 
     const handleClick = () => {
         let login = document.getElementById("login").value
-        let pass = document.getElementById("pass").value
+        let password = document.getElementById("pass").value
+        let email = document.getElementById("email").value
         // 
-        axios.post("http://localhost:4000/create", {login: login, password: pass })
+        axios.post("http://localhost:4000/register", { email: email, name: login, password: password })
     }
 
     return(
@@ -21,8 +22,10 @@ export const SignUpContainer = () => {
                 </div>
                 <div className='signup-form'>
                     <form>
-                        <label>Username or Email address</label>
+                        <label>Username</label>
                         <input id="login" className='form-control' required type="text" />
+                        <label>Email address</label>
+                        <input id="email" className='form-control' required type="text" />
                         <label>Password </label>
                         <input id="pass" className='form-control' type="password" />
                         <button className='btn btn-primary' required onClick={handleClick}>Sign Up</button>

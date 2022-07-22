@@ -1,9 +1,14 @@
+import axios from 'axios'
 import './index.css'
 
 export const LoginContainer = () => {
 
-    const handleClick = () => {
+    const handleClick = async () => {
+        let password = document.getElementById("pass").value
+        let email = document.getElementById("email").value
 
+        let result = await axios.post("http://localhost:4000/login", { password: password, email: email})
+        console.log(result)
     }
 
     return (
@@ -17,8 +22,8 @@ export const LoginContainer = () => {
                 </div>
                 <div className='login-form'>
                     <form>
-                        <label>Username or Email address</label>
-                        <input id="login" className='form-control' required type="text" />
+                        <label>Email address</label>
+                        <input id="email" className='form-control' required type="text" />
                         <label>Password </label>
                         <input id="pass" className='form-control' type="password" />
                         <button className='btn btn-primary' required onClick={handleClick}>Sign Up</button>

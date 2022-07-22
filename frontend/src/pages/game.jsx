@@ -1,4 +1,3 @@
-import { Header } from "../components/header"
 import { GameContainer } from "../components/gameContainer"
 
 const Game = () => {

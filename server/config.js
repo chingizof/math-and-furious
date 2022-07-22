@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 
 import { getFirestore, query, getDocs, collection, where, addDoc}  from "firebase/firestore";
 
-import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -17,9 +17,11 @@ const firebaseConfig = {
     measurementId: "G-6M856T54EX"
   };
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
-const usersCollection = collection(db, "Users")
+const auth = getAuth(app)
+const usersCollection = collection(db, "users")
+const gamesCollection = collection(db, "games")
 
 
 const getAllUsers = async () => {
@@ -40,7 +42,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
-    await addDoc(collection(db, "users"), {
+    await addDoc(usersCollection, {
       uid: user.uid,
       name,
       authProvider: "local",
@@ -48,7 +50,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     });
   } catch (err) {
     console.error(err);
-    alert(err.message);
   }
 };
 
@@ -57,9 +58,47 @@ const logInWithEmailAndPassword = async (email, password) => {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
     console.error(err);
+  }
+};
+
+const sendPasswordReset = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    alert("Password reset link sent!");
+  } catch (err) {
+    console.error(err);
     alert(err.message);
   }
 };
 
+const logout = () => {
+  signOut(auth);
+};
 
-export { getAllUsers, addUser } //ES6 notation of module.exports = User
+const createNewGame = async (req) => {
+  let game = {
+    // created: Date.getDate(),
+    participants: [
+      {
+        uid: req.body.uid,
+        score: 0
+      },
+    ]
+  }
+
+  try {
+    const newGame = await addDoc(gamesCollection, game);
+    console.log("Game created with ID:", newGame.id);
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+
+export { getAllUsers, addUser, registerWithEmailAndPassword, logInWithEmailAndPassword, sendPasswordReset, logout, createNewGame } //ES6 notation of module.exports = User
+
+
+//сохрать айди в локал сторадж 
+    // роуты слушают локал сторадж, проверяют есть ли там айди
+    // если есть, совпадает ли он с тем что есть в базе
+    //тогда будет знать что показывать

@@ -13,7 +13,7 @@ export const Header = () => {
                         </div>
                     </Link>
                     <div>
-                        <Link to="/game">
+                        <Link to="/find-games">
                             Find New Game
                         </Link>
                     </div>

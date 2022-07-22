@@ -9,6 +9,9 @@ import { SignUp } from './pages/signUp.jsx';
 import { Login } from './pages/login.jsx';
 import { Leaderboard } from './pages/leaderboard.jsx';
 import { Home } from './pages/home.jsx'
+import { FindGamesPage } from './pages/findGames.jsx'
+
+
 
 
 function App() {
@@ -21,6 +24,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/find-games" element={<FindGamesPage />} />
         {/* <Route path="blogs" element={<Blogs />} /> */}
         {/* <Route path="contact" element={<Contact />} /> */}
         {/* <Route path="*" element={<NoPage />} /> */}
@@ -31,3 +35,7 @@ function App() {
 }
 
 export default App;
+
+// поделить роуты на public & private (проверка по айди)
+
+//создаю uid, но как следить за ним, в какой странице использовать useState
