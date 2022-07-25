@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import {addUser, getAllUsers, registerWithEmailAndPassword, logInWithEmailAndPassword, createNewGame }  from './config.js'
-import { addDoc } from 'firebase/firestore'
+import { addDoc, doc } from 'firebase/firestore'
+import e from 'express'
 
 const User = {} 
 
@@ -42,19 +43,10 @@ app.post('/new-game', async (req, res) => {
     res.send("success")//
 })
 
-app.post('/update', async (req,res) => {
-    const id = req.body.id
-    delete req.body.id
-    const data = req.body
-    await User.doc(id).update(data)
-    res.send("accepted change")
-})
 
-app.post('/delete', async (req,res) => {
-    const id = req.body.id
-    await User.doc(id).delete()
-    res.send("Deleted succsfully")
-})
+// delete request
+
+//update request
 
 app.listen(4000, () => {
     console.log("Up and running")

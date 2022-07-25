@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 
 
-import { getFirestore, query, getDocs, collection, where, addDoc}  from "firebase/firestore";
+import { getFirestore, query, getDocs, collection, where, addDoc, doc, onSnapshot}  from "firebase/firestore";
 
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
 
@@ -77,7 +77,8 @@ const logout = () => {
 
 const createNewGame = async (req) => {
   let game = {
-    // created: Date.getDate(),
+    created: new Date(),
+    finished: false,
     participants: [
       {
         uid: req.body.uid,
@@ -94,6 +95,24 @@ const createNewGame = async (req) => {
   }
 }
 
+const unsub = onSnapshot(
+  doc(db, "cities", "SF"), 
+  { includeMetadataChanges: true }, 
+  (doc) => {
+    console.log(doc)
+    // addUser(doc)
+  });
+
+const q = query(usersCollection, where("email", "==", "chingizof@mail.ru"));
+const unsubscribe = onSnapshot(q, (querySnapshot) => {
+  const passwords = [];
+  querySnapshot.forEach((doc) => {
+      passwords.push(doc.data().name);
+  });
+  console.log("current players with chingizof@email: ", passwords.join(", "));
+});
+
+
 
 export { getAllUsers, addUser, registerWithEmailAndPassword, logInWithEmailAndPassword, sendPasswordReset, logout, createNewGame } //ES6 notation of module.exports = User
 
@@ -102,3 +121,9 @@ export { getAllUsers, addUser, registerWithEmailAndPassword, logInWithEmailAndPa
     // роуты слушают локал сторадж, проверяют есть ли там айди
     // если есть, совпадает ли он с тем что есть в базе
     //тогда будет знать что показывать
+
+
+
+//создается структура игра со свойством participants, при изменении player обновляю скор
+
+//player имеет score который обновляется
