@@ -59,7 +59,7 @@ form {
     border-radius: 6px;
     box-shadow: rgb(208 215 222 / 20%);
     width: 100%;
-    margin: 4px 0 16px;
+    margin: 4px 0 10px;
 }
 
 .btn {
@@ -95,4 +95,8 @@ label {
     background-color: transparent;
     border: 0;
     color: #24292f;
+}
+
+.reset-password {
+    margin-bottom:10px;
 }

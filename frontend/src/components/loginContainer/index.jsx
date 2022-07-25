@@ -1,14 +1,17 @@
 import axios from 'axios'
 import './index.css'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { logInWithEmailAndPassword } from '../../loginUser'
 
 export const LoginContainer = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
-    const handleClick = async () => {
-        let password = document.getElementById("pass").value
-        let email = document.getElementById("email").value
-
-        let result = await axios.post("http://localhost:4000/login", { password: password, email: email})
-        console.log(result)
+    const login = (e) => {
+        e.preventDefault()
+        console.log(email, password)
+        logInWithEmailAndPassword(email, password)
     }
 
     return (
@@ -23,10 +26,11 @@ export const LoginContainer = () => {
                 <div className='login-form'>
                     <form>
                         <label>Email address</label>
-                        <input id="email" className='form-control' required type="text" />
+                        <input id="email" className='form-control' required type="text" onChange={(e) => setEmail(e.target.value)}/>
                         <label>Password </label>
-                        <input id="pass" className='form-control' type="password" />
-                        <button className='btn btn-primary' required onClick={handleClick}>Sign Up</button>
+                        <input id="pass" className='form-control' type="password" onChange={(e) => setPassword(e.target.value)}/>
+                        <div className='reset-password'>Reset Password</div>
+                        <button className='btn btn-primary' required onClick={login}>Sign In</button>
                     </form>
                 </div>
             </div>

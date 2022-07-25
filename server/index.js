@@ -20,8 +20,9 @@ app.post('/register', async (req,res) => {
     const email = req.body.email
     const login = req.body.name
     const password = req.body.password
-    await registerWithEmailAndPassword(login, email, password)
-    res.status(200).send({msg:"Success"})
+    let token = await registerWithEmailAndPassword(login, email, password)
+    console.log(token)
+    res.send(token)
 })
 
 

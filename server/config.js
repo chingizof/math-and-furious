@@ -48,6 +48,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       authProvider: "local",
       email,
     });
+    return user.uid
   } catch (err) {
     console.error(err);
   }
@@ -99,7 +100,7 @@ const unsub = onSnapshot(
   doc(db, "cities", "SF"), 
   { includeMetadataChanges: true }, 
   (doc) => {
-    console.log(doc)
+    // console.log(doc)
     // addUser(doc)
   });
 
@@ -126,4 +127,4 @@ export { getAllUsers, addUser, registerWithEmailAndPassword, logInWithEmailAndPa
 
 //создается структура игра со свойством participants, при изменении player обновляю скор
 
-//player имеет score который обновляется
+//player имеет score который обновляется//
