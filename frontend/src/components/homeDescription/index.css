@@ -28,7 +28,7 @@
   }
 
 .container-text {
-    margin-top: 100px;
+    margin-top: 250px;
     font-weight: 600;
     font-size: 44px;
     line-height: 58px;
@@ -40,22 +40,21 @@
 .play-now {
     position: relative;
     padding: 5px 16px;
-    font-size: 14px;
+    font-size: 30px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 50px;
+    width: 250px;
+    text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
     border: 1px solid;
-    border-radius: 6px;
+    border-radius: 50px;
     appearance: none;
-    margin-bottom: 50px;
-    background-color: black;
-}
-
-.play-now a {
-  color: white;
+    margin-bottom: 200px;
+    background-color: white;
+    color: black;
 }
 
 .home-why {
@@ -74,6 +73,7 @@
 
 .why-solve-math h1 {
   margin: 0;
+  background-color: black;
 }
 
 .container-item {

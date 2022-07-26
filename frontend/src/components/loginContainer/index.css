@@ -84,8 +84,7 @@ label {
 
 .btn-primary {
     color: white;
-    background-color: #2da44e;
-    border-color: rgb(27 31 36 / 15%);
+    background-color: black;
     box-shadow: 0 1px 0 rgba(27,31,36,0.1);
 }
 

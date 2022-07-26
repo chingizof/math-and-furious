@@ -1,14 +1,19 @@
 import './index.css'
 import { Link } from 'react-router-dom'
 import { createNewGame } from '../../gameProcess'
+import { useNavigate } from 'react-router-dom'
 
 export const GamesSearch = () => {
     
 // here we request array of games with status "wating"
 //later we will represent it on webpage using map
-    const handleClick = () => {
+    const navigate = useNavigate()
+    const handleClick = async () => {
         const id = localStorage.getItem("token")
-        createNewGame(id)
+        const gameId = await createNewGame(id)
+        localStorage.setItem("gameId", gameId)
+        console.log(gameId)
+        navigate('/game')
     }
 
     return (
