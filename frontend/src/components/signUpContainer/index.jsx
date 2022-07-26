@@ -1,4 +1,3 @@
-import axios from 'axios'
 import './index.css'
 import { useState } from 'react'
 import { registerWithEmailAndPassword } from '../../registerUser'
