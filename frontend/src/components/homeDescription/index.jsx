@@ -5,7 +5,7 @@ import { Footer } from '../footer'
 export const HomeDescription = () => {
 
     return(
-        <div className="wrapper">
+        <div className="wrapper" style={{ backgroundImage: `url(/back.svg)` }}>
             <div className="container">
                 <div className='container-description'>
                     <h1 className='container-text'>Start playing Fast & Furious: develop your mental math skills and have fun together</h1>
