@@ -39,7 +39,7 @@ tr {
 .name-container {
     width: auto;
     font-weight: 500;
-    color: #638e8e;
+    color: rgba(255, 255, 255, 0.8);
     display: inline-block;
     overflow: hidden;
     text-align: right;
@@ -49,5 +49,5 @@ tr {
 .score-container{
     text-align: center;
     font-weight: 500;
-    color: #638e8e;
+    color: rgba(255, 255, 255, 0.8);
 }
