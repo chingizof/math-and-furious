@@ -13,11 +13,12 @@ export const Header = () => {
     // }   <---- this results in infinite render
 
     useEffect(() => {
-        if (typeof(localStorage.getItem("token"))==undefined) {
+        if (localStorage.getItem("token")==null) {
             setLogged(false)
         } else {
             setLogged(true)
         }
+        console.log(typeof(localStorage.getItem("token")))
     }, [localStorage.getItem("token")])
 
     return(
@@ -39,7 +40,7 @@ export const Header = () => {
                         </Link>
                     </div>
                     <div className={`authentification`} >
-                        <div className={`${logged ? "hidden" : ""}`}>
+                        <div className={`signs ${logged ? "hidden" : ""}`}>
                             <SingInHeader />
                             <SingUpHeader />
                         </div>

@@ -16,7 +16,8 @@
     align-items: center;
 }
 
-.authentification {
+
+.signs {
     display: flex;
     gap: 10px;
 }
