@@ -1,4 +1,4 @@
-import { Route, Routes, Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Layout from './pages/layout.jsx';
 import { BrowserRouter } from 'react-router-dom';
@@ -16,7 +16,6 @@ import { Reset } from './pages/reset'
 function App() {
   return (
     <BrowserRouter>
-      <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/sign-up" element={<SignUp />} />
@@ -31,7 +30,6 @@ function App() {
             {/* <Route path="*" element={<NoPage />} /> */}
           </Route>
         </Routes>
-      </Router>
     </BrowserRouter>
   );
 }

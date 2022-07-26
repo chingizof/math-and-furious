@@ -37,7 +37,7 @@ tr {
 }
 
 .name-container {
-    width: 100px;
+    width: auto;
     font-weight: 500;
     color: #638e8e;
     display: inline-block;

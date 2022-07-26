@@ -10,9 +10,7 @@ export const ScoreboardItem = ({name, score}) => {
                             <div className='name-container'>
                                 {name}
                             </div>
-                            <div className='avatar-image' style={{ backgroundImage: `url(/car.png)` }}>
-                                {/* <img src="https://data.typeracer.com/public/images/avatars/mobil3.svg" alt="" /> */}
-                            </div>
+                            <div className='avatar-image' style={{ backgroundImage: `url(/car.png)` }} />
                         </div>
                     </div>
                 </td>

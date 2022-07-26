@@ -25,6 +25,7 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
         authProvider: "local",
         email,
       });
+      return user.uid
     } catch (err) {
       console.error(err);
     }

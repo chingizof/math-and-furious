@@ -9,11 +9,12 @@ export const SignUpContainer = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const register = (e) => {
+    const register = async (e) => {
         e.preventDefault();
         try{
             // console.log("button")
-            registerWithEmailAndPassword(login, email, password)
+            let uid = await registerWithEmailAndPassword(login, email, password)
+            localStorage.setItem("token", uid)
         }catch(e){
             console.log(e)
         }

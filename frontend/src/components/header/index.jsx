@@ -1,9 +1,25 @@
 import { SingInHeader } from '../loginHeader'
 import { SingUpHeader } from '../signUpHeader'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { SignoutHeader } from '../signoutHeader'
 import './index.css'
 
 export const Header = () => {
+    const [logged, setLogged] = useState()
+
+    // if(typeof(localStorage.getItem("token"))!='undefined'){
+    //     setLogged(true)
+    // }   <---- this results in infinite render
+
+    useEffect(() => {
+        if (typeof(localStorage.getItem("token"))==undefined) {
+            setLogged(false)
+        } else {
+            setLogged(true)
+        }
+    }, [localStorage.getItem("token")])
+
     return(
         <nav>
             <div className='header-wrapper'>
@@ -22,33 +38,17 @@ export const Header = () => {
                             Leaderboards
                         </Link>
                     </div>
-                    <div className='authentification'>
-                        <SingInHeader />
-                        <SingUpHeader />
+                    <div className={`authentification`} >
+                        <div className={`${logged ? "hidden" : ""}`}>
+                            <SingInHeader />
+                            <SingUpHeader />
+                        </div>
+                        <div className={`logout ${logged ? "" : "hidden"}`} >
+                            <SignoutHeader/>
+                        </div>
                     </div>
                 </div>
             </div>
         </nav>
     )
-
-    // return(
-    //     <>
-    //         <Nav>
-    //             <NavMenu>
-    //                 <NavLink to="/about" activeStyle>
-    //                     About
-    //                 </NavLink>
-    //                 <NavLink to="/contact" activeStyle>
-    //                     Contact Us
-    //                 </NavLink>
-    //                 <NavLink to="/blogs" activeStyle>
-    //                     Blogs
-    //                 </NavLink>
-    //                 <NavLink to="/sign-up" activeStyle>
-    //                     Sign Up
-    //                 </NavLink>
-    //             </NavMenu>
-    //         </Nav>
-    //     </>
-    // )
 }

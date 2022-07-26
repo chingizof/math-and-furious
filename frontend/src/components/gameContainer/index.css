@@ -1,7 +1,16 @@
-.container-wrapper{
+.container-card{
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    height: auto
+    height: auto;
 }
+
+.container-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://i.pinimg.com/736x/01/fe/06/01fe067cc51a9134490450994a89f1e2--astrology-aesthetics.jpg");
+    overflow: auto;
+}
+
+

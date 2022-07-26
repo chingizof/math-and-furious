@@ -21,8 +21,10 @@ export const GameContainer = () => {
 
     return( 
         <div className='container-wrapper'>
-            <Scoreboard score={score}/>
-            <QuestionContainer first={ques.first} sign={ques.sign} second={ques.second} answer={ques.answer} score={score} setScore={setScore} />
+            <div className='container-card'>
+                <Scoreboard score={score}/>
+                <QuestionContainer first={ques.first} sign={ques.sign} second={ques.second} answer={ques.answer} score={score} setScore={setScore} />
+            </div>
         </div>
     )
 }
