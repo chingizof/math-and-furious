@@ -4,4 +4,7 @@
     text-align: center;
     border-radius: 5px;
     padding: 5px;
+    cursor: pointer;
+    appearance: none;
+    user-select: none;
 }

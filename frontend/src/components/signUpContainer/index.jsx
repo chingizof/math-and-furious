@@ -2,18 +2,24 @@ import './index.css'
 import { useState } from 'react'
 import { registerWithEmailAndPassword } from '../../registerUser'
 import { Link } from 'react-router-dom'
+import { Navigate, useNavigate } from "react-router-dom"
+
 
 export const SignUpContainer = () => {
     const [login, setLogin] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
     const register = async (e) => {
         e.preventDefault();
         try{
             // console.log("button")
             let uid = await registerWithEmailAndPassword(login, email, password)
-            localStorage.setItem("token", uid)
+            if (uid) {
+                localStorage.setItem("token", uid)
+                navigate("/")
+            }
         }catch(e){
             console.log(e)
         }

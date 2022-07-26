@@ -2,15 +2,21 @@ import './index.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { logInWithEmailAndPassword } from '../../loginUser'
+import { Navigate, useNavigate } from "react-router-dom"
 
 export const LoginContainer = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
-    const login = (e) => {
+    const login = async (e) => {
         e.preventDefault()
         console.log(email, password)
-        logInWithEmailAndPassword(email, password)
+        let uid = await logInWithEmailAndPassword(email, password)
+        if (uid) {
+            localStorage.setItem("token", uid)
+            navigate('/')
+        }
     }
 
     return (
