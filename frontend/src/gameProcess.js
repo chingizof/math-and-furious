@@ -20,8 +20,8 @@ export const createNewGame = async (id) => {
     })
 }
 
-export const addPlayer = async (gameref, id) => {
-    await updateDoc(gameRef, {
-        participants: arrayUnion({id: id, score: 0})
-    })
-}
+// export const addPlayer = async (gameref, id) => {
+//     await updateDoc(gameRef, {
+//         participants: arrayUnion({id: id, score: 0})
+//     })
+// }

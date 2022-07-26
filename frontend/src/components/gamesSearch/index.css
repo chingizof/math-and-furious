@@ -1,0 +1,21 @@
+.start-game {
+    position: relative;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 6px;
+    appearance: none;
+    margin-bottom: 50px;
+    background-color: aquamarine;
+}
+
+.start-game a {
+  color: white;
+}
+

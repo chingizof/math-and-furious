@@ -17,6 +17,11 @@ export const GamesSearch = () => {
                 <div className='catalogue-item'>
                     Beknar, Aidar, Nartay, Zhanibek
                     4/5
+                    <div className="start-game">
+                        <Link to="/game">
+                            Start Now!
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
