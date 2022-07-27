@@ -9,8 +9,27 @@
 .container-wrapper {
     width: 100vw;
     height: 100vh;
-    background-image: url("https://i.pinimg.com/736x/01/fe/06/01fe067cc51a9134490450994a89f1e2--astrology-aesthetics.jpg");
     overflow: auto;
 }
+/* 
+.container-wrapper:before {
+      content: "";
+      backdrop-filter: blur(10px);
+      position: absolute;
+      width : 100%;
+      height: 100%;
+      background: inherit;
+      z-index: -1;
+  
+      filter        : blur(10px);
+      -moz-filter   : blur(10px);
+      -webkit-filter: blur(10px);
+      -o-filter     : blur(10px);
+  
+     transition        : all 3s linear;
+      -moz-transition   : all 3s linear;
+      -webkit-transition: all 3s linear;
+      -o-transition     : all 3s linear;
+  } */
 
 

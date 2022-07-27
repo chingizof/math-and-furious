@@ -27,7 +27,7 @@ export const SignUpContainer = () => {
 
     return(
         <div className='signup-wrapper'>
-            <div className='signup-image' style={{backgroundImage:`url('/furious-modified.jpeg')`}}/>
+            <div className='signup-image' style={{backgroundImage:`url('/furious-modified.jpeg')`}} />
             <div className="signup-container">
                 <div className='sign-up-header'>
                     <h1>Sign Up to Portal</h1>

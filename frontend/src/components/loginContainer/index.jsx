@@ -21,9 +21,7 @@ export const LoginContainer = () => {
 
     return (
         <div className='login-wrapper'>
-            <div className='login-image'>
-                <img src="" alt="" />
-            </div>
+            <div className='login-image' style={{backgroundImage:`url('/furious-modified.jpeg')`}} />  
             <div className="login-container">
                 <div className='login-header'>
                     <h1>Login to Portal</h1>

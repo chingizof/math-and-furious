@@ -20,7 +20,10 @@ body {
     width: 60%;
     height: 100%;
     background-color: aquamarine;
-    background-image: url("https://www.ft.com/__assets/creatives/product/dynamic-barriers/markets.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: baseline;
 }
 
 .login-container {

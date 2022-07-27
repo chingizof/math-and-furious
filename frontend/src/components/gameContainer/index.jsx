@@ -20,7 +20,7 @@ export const GameContainer = () => {
     generateQuestion()
 
     return( 
-        <div className='container-wrapper'>
+        <div className='container-wrapper' style={{ backgroundImage: 'url("https://i.pinimg.com/736x/01/fe/06/01fe067cc51a9134490450994a89f1e2--astrology-aesthetics.jpg")'}}>
             <div className='container-card'>
                 <Scoreboard score={score}/>
                 <QuestionContainer first={ques.first} sign={ques.sign} second={ques.second} answer={ques.answer} score={score} setScore={setScore} />
