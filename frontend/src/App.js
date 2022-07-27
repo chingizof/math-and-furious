@@ -9,6 +9,7 @@ import { Leaderboard } from './pages/leaderboard.jsx';
 import { Home } from './pages/home.jsx'
 import { FindGamesPage } from './pages/findGames.jsx'
 import { Reset } from './pages/reset'
+import { WhySolve } from './pages/whySolve/whySolve'
 
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/find-games" element={<FindGamesPage />} />
             <Route path="/reset" element={<Reset />} />
+            <Route path="/whysolve" element={<WhySolve />} />
             {/* <Route path="blogs" element={<Blogs />} /> */}
             {/* <Route path="contact" element={<Contact />} /> */}
             {/* <Route path="*" element={<NoPage />} /> */}

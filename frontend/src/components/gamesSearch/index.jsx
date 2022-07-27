@@ -10,6 +10,7 @@ export const GamesSearch = () => {
     const navigate = useNavigate()
     const handleClick = async () => {
         const id = localStorage.getItem("token")
+        console.log(id)
         const gameId = await createNewGame(id)
         localStorage.setItem("gameId", gameId)
         console.log(gameId)

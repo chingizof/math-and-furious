@@ -39,6 +39,11 @@ export const Header = () => {
                             Leaderboards
                         </Link>
                     </div>
+                    <div>
+                        <Link to="/whysolve">
+                            Why Solve Math?
+                        </Link>
+                    </div>
                     <div className={`authentification`} >
                         <div className={`signs ${logged ? "hidden" : ""}`}>
                             <SingInHeader />

@@ -1,46 +1,32 @@
 import { db, gamesCollection } from './firebase'
-import { collection, addDoc, setDoc, updateDoc, arrayUnion, arrayRemove, FieldPath} from "firebase/firestore"; 
 
-export const updateScore = async (score, playerId, gameId) => {
-    try {
-        console.log("hi")
 
-        const game = await db.collection("games").where(FieldPath.documentId() == gameId)
+import { getDoc, getFirestore, query, getDocs, collection, where, addDoc, doc, onSnapshot, setDoc, updateDoc }  from "firebase/firestore";
 
-        console.log('hi2')
-
-        await game.update({
-            participants: [{
-                id: playerId,
-                score: score
-            }]
-        })
-    } catch (e) {
-        console.log(e)
-    } 
-
-    // db.collection("games").doc("frank").update({
-    //     participants: [{
-    //     id: playerId,
-    //     score: 49
-    //     }]
-    // }).then(function() {
-    //     console.log("Frank food updated");
-    // });
-}
 
 export const createNewGame = async (id) => {
-    let gameRef = await addDoc(gamesCollection, {
+    let gameRef = doc(db, "games", id)
+    console.log("hh")
+
+    await setDoc(gameRef, {
         status: "waiting",
         participants: [{id: id, score: 0}],
         winner: "",
     })
-
+    console.log("hh")
     return gameRef.id
 }
 
-// export const addPlayer = async (gameref, id) => {
-//     await updateDoc(gameRef, {
-//         participants: arrayUnion({id: id, score: 0})
-//     })
-// }
+export const updateScore = async (score, playerId, gameId) => {
+
+        let gameRef = doc(db, "games", playerId)
+
+        console.log("h1")
+
+        await updateDoc(gameRef, {
+            participants: [{
+                id: playerId,
+                score:score
+            }]
+        })
+}
