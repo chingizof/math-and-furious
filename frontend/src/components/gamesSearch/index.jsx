@@ -20,14 +20,15 @@ export const GamesSearch = () => {
         navigate(`/game/${gameId}`)
     }
 
-    const findGame = () => {
+    const findGame = async () => {
         console.log('hi')
         const gameId = document.getElementById('game-search').value
         console.log(gameId)
         const playerId = localStorage.getItem("token")
         const name = localStorage.getItem("name")
+        await localStorage.setItem("gameId", gameId)
 
-        addPlayer(playerId, gameId, name)
+        await addPlayer(playerId, gameId, name)
 
         navigate(`/game/${gameId}`)
     }
