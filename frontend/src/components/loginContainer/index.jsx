@@ -5,6 +5,7 @@ import { logInWithEmailAndPassword } from '../../loginUser'
 import { Navigate, useNavigate } from "react-router-dom"
 
 export const LoginContainer = () => {
+    const [name, setName] = useState ("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -15,6 +16,7 @@ export const LoginContainer = () => {
         let uid = await logInWithEmailAndPassword(email, password)
         if (uid) {
             localStorage.setItem("token", uid)
+            localStorage.setItem("name", name)
             navigate('/')
         }
     }
@@ -28,6 +30,8 @@ export const LoginContainer = () => {
                 </div>
                 <div className='login-form'>
                     <form>
+                        <label>Username</label>
+                        <input id="login" className='form-control' required type="text"  value={login} onChange={(e) => setName(e.target.value)} />
                         <label>Email address</label>
                         <input id="email" className='form-control' required type="text" onChange={(e) => setEmail(e.target.value)}/>
                         <label>Password </label>

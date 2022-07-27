@@ -17,7 +17,7 @@ export const HomeDescription = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
