@@ -18,6 +18,7 @@ export const SignUpContainer = () => {
             let uid = await registerWithEmailAndPassword(login, email, password)
             if (uid) {
                 localStorage.setItem("token", uid)
+                localStorage.setItem("name", login)
                 navigate("/")
             }
         }catch(e){
