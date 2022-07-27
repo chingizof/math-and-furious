@@ -6,7 +6,7 @@ export const AnswerInput = ({first, score, setScore, playing, setPlaying}) => {
         var val = document.getElementById('question-input').value
         if (parseInt(val)===first){
             console.log('congrats')
-            setScore(score+1)
+             await setScore(score+1)
             document.getElementById('question-input').value = ""
             // change score in database
             const playerId = localStorage.getItem("token")

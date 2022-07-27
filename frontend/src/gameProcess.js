@@ -4,16 +4,14 @@ import { db, gamesCollection } from './firebase'
 import { getDoc, getFirestore, query, getDocs, collection, where, addDoc, doc, onSnapshot, setDoc, updateDoc, arrayUnion, arrayRemove }  from "firebase/firestore";
 
 
-export const createNewGame = async (gameId, id) => {
+export const createNewGame = async (gameId, id, name) => {
     let gameRef = doc(db, "games", gameId)
-    console.log("hh")
 
     await setDoc(gameRef, {
         status: "waiting",
-        participants: [{id: id, score: 0}],
+        participants: [{id: id, score: 0, name:name}],
         winner: "",
     })
-    console.log("hh")
     return gameRef.id
 }
 
@@ -51,3 +49,11 @@ export const addPlayer = async (playerId, gameId, name) => {
 // export const getName = (playerId) => {
 //     let userRef = doc(db, users, ) //make users id same as user.uid
 // }
+
+
+export const getScores = async (gameId) => {
+    let gameRef = doc(db, 'games', gameId)
+    const gameSnap = await getDoc(gameRef)
+
+    return gameSnap.data()
+}

@@ -14,7 +14,8 @@ export const GamesSearch = () => {
         const playerId = localStorage.getItem("token")
         const gameId = uuid()
 
-        createNewGame(gameId, playerId)
+        const name = localStorage.getItem("name")
+        createNewGame(gameId, playerId, name)
         localStorage.setItem("gameId", gameId)
 
         navigate(`/game/${gameId}`)
