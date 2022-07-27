@@ -10,6 +10,7 @@ import { Home } from './pages/home.jsx'
 import { FindGamesPage } from './pages/findGames.jsx'
 import { Reset } from './pages/reset'
 import { WhySolve } from './pages/whySolve/whySolve'
+import { NoPage } from './pages/noPage';
 
 
 
@@ -29,7 +30,7 @@ function App() {
             <Route path="/whysolve" element={<WhySolve />} />
             {/* <Route path="blogs" element={<Blogs />} /> */}
             {/* <Route path="contact" element={<Contact />} /> */}
-            {/* <Route path="*" element={<NoPage />} /> */}
+            <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
     </BrowserRouter>

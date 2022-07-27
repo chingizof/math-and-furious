@@ -1,3 +1,7 @@
+body {
+  position: fixed;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;

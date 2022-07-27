@@ -17,7 +17,7 @@ export const GamesSearch = () => {
         createNewGame(gameId, playerId)
         localStorage.setItem("gameId", gameId)
 
-        navigate('/game')
+        navigate(`/game/${gameId}`)
     }
 
     const findGame = () => {
@@ -25,7 +25,9 @@ export const GamesSearch = () => {
         const gameId = document.getElementById('game-search').value
         console.log(gameId)
         const playerId = localStorage.getItem("token")
-        addPlayer(playerId, gameId)
+        const name = localStorage.getItem("name")
+
+        addPlayer(playerId, gameId, name)
 
         navigate(`/game/${gameId}`)
     }

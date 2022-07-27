@@ -31,7 +31,7 @@ export const LoginContainer = () => {
                 <div className='login-form'>
                     <form>
                         <label>Username</label>
-                        <input id="login" className='form-control' required type="text"  value={login} onChange={(e) => setName(e.target.value)} />
+                        <input id="login" className='form-control' required type="text" onChange={(e) => setName(e.target.value)} />
                         <label>Email address</label>
                         <input id="email" className='form-control' required type="text" onChange={(e) => setEmail(e.target.value)}/>
                         <label>Password </label>
