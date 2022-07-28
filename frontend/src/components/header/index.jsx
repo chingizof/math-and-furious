@@ -6,11 +6,7 @@ import { SignoutHeader } from '../signoutHeader'
 import './index.css'
 
 export const Header = () => {
-    const [logged, setLogged] = useState()
-
-    // if(typeof(localStorage.getItem("token"))!='undefined'){
-    //     setLogged(true)
-    // }   <---- this results in infinite render
+    const [logged, setLogged] = useState(false)
 
     useEffect(() => {
         if (localStorage.getItem("token")==null) {

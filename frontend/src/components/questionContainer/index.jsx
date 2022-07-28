@@ -3,13 +3,13 @@ import { Timer } from '../timer'
 import { useState } from 'react'
 import './index.css'
 
-export const QuestionContainer = ({first, sign, second, answer, score, setScore}) => {
-    const [playing, setPlaying] = useState(true)
+export const QuestionContainer = ({gameTime, setGameTime, startTime, first, sign, second, answer, score, setScore}) => {
+    const [playing, setPlaying] = useState(false)
 
     return(
         <div className='question-container'>
             {/* TIMER */}
-            <Timer playing={playing} setPlaying={setPlaying} />
+            <Timer gameTime={gameTime} setGameTime={setGameTime} playing={playing} setPlaying={setPlaying} startTime={startTime} />
             {/* QUESTION */}
             <div className={`${playing ? 'question-content' : "hidden"}`}>
                 <AnswerInput first={first} score={score} setScore={setScore} playing={playing} setPlaying={setPlaying} /> {sign} {second} = {answer}
@@ -19,13 +19,3 @@ export const QuestionContainer = ({first, sign, second, answer, score, setScore}
         </div>
     )
 }
-
-
-
-// const firebase = {  
-
-// }
-
-// firebase.getCollection("lobbies").getDocument("1203910239123").players.onUpdate((updatedPlayers) => {
-//     updatedPlayers
-// })

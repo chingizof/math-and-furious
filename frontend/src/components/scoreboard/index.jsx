@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 
 //обновлять данные каждую секунду
 
-export const Scoreboard = ({score}) => {
+export const Scoreboard = ({score, setStartTime, setGameTime}) => {
 
     const gameId = localStorage.getItem("gameId")
     const [scores, setScores] = useState([])
@@ -20,6 +20,8 @@ export const Scoreboard = ({score}) => {
 
         bro.then(r => {
             setScores(r.participants)
+            setStartTime(r.startTime)
+            setGameTime(r.gameTime)
         })
     }
 
@@ -49,6 +51,10 @@ export const Scoreboard = ({score}) => {
         // console.log(scores)
         return newScores;
     }
+
+    // const waiting = async() => {
+
+    // }
 
 
     return(
