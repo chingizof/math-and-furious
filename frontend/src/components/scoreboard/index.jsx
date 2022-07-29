@@ -21,7 +21,7 @@ export const Scoreboard = ({score, setStartTime, setGameTime}) => {
         bro.then(r => {
             setScores(r.participants)
             setStartTime(r.startTime)
-            setGameTime(r.gameTime)
+            // setGameTime(r.gameTime)
         })
     }
 
