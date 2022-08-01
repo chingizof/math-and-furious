@@ -17,23 +17,24 @@ import { NoPage } from './pages/noPage';
 
 function App() {
   return (
-    <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/game/:id" element={<Game />} />
-            <Route index element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/find-games" element={<FindGamesPage />} />
-            <Route path="/reset" element={<Reset />} />
-            <Route path="/whysolve" element={<WhySolve />} />
-            {/* <Route path="blogs" element={<Blogs />} /> */}
-            {/* <Route path="contact" element={<Contact />} /> */}
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
-    </BrowserRouter>
+
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/game/:id" element={<Game />} />
+              <Route index element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/find-games" element={<FindGamesPage />} />
+              <Route path="/reset" element={<Reset />} />
+              <Route path="/whysolve" element={<WhySolve />} />
+              {/* <Route path="blogs" element={<Blogs />} /> */}
+              {/* <Route path="contact" element={<Contact />} /> */}
+              <Route path="*" element={<NoPage />} />
+            </Route>
+          </Routes>
+      </BrowserRouter>
   );
 }
 

@@ -1,6 +1,7 @@
 .scoreboard {
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: rgba(0, 0, 70, 0.805);
     border: 1px white solid;
+    font-family: IBM Plex Mono,monospace;
 }

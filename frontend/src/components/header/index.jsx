@@ -1,9 +1,12 @@
 import { SingInHeader } from '../loginHeader'
 import { SingUpHeader } from '../signUpHeader'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import { Link } from 'react-router-dom'
 import { SignoutHeader } from '../signoutHeader'
 import './index.css'
+
+const token = localStorage.getItem("token");
+
 
 export const Header = () => {
     const [logged, setLogged] = useState(false)
@@ -15,7 +18,9 @@ export const Header = () => {
             setLogged(true)
         }
         console.log(typeof(localStorage.getItem("token")))
-    }, [localStorage.getItem("token")])
+    }, [token])
+
+    
 
     return(
         <nav>
@@ -46,7 +51,7 @@ export const Header = () => {
                             <SingUpHeader />
                         </div>
                         <div className={`logout ${logged ? "" : "hidden"}`} >
-                            <SignoutHeader/>
+                            <SignoutHeader setLogged={setLogged}/>
                         </div>
                     </div>
                 </div>

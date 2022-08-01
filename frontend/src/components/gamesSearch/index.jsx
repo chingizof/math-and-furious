@@ -36,17 +36,15 @@ export const GamesSearch = () => {
 
     return (
         // games catalogue
-        <div className="find-wrapper">
+        <div className="find-wrapper" style={{ backgroundImage: `url(/back.svg)` }}>
             <div className='games-catalogue'>
-                Use ID to enter existing game
-                <input id="game-search" />
-                <button onClick={findGame}>Find</button>
-                <div className='catalogue-item'>
-                    Beknar, Aidar, Nartay, Zhanibek
-                    4/5
-                    <div className="start-game" onClick={newGame}>
-                            Start Now!
-                    </div>
+                <div className='game-text'>
+                    Use ID to enter existing game
+                    <input id="game-search" />
+                    <button id="search-button" onClick={findGame}>Find</button>
+                </div>
+                <div className="start-game" onClick={newGame}>
+                    Create new game!
                 </div>
             </div>
         </div>

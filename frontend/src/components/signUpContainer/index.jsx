@@ -20,6 +20,7 @@ export const SignUpContainer = () => {
                 localStorage.setItem("token", uid)
                 localStorage.setItem("name", login)
                 navigate("/")
+                window.location.reload()
             }
         }catch(e){
             console.log(e)

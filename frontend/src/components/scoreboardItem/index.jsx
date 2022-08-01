@@ -1,6 +1,22 @@
 import './index.css'
+import { useState, useEffect } from 'react';
 
 export const ScoreboardItem = ({name, score}) => {
+
+    // const [car, setCar] = useState("")
+
+    // useEffect(() => {
+    //     let getRandomInt = Math.floor(Math.random() * 2)
+    // }, [])
+
+
+    // if (getRandomInt(2) == 0) {
+    //      car = `url(/pixel-art-van.svg)`
+    // } else {
+    //     car = `url(/car.png)`
+    // }
+    // console.log(car)
+
     return(
         <table className="row">
             <tr>
