@@ -37,7 +37,7 @@
 td {
     margin-top: auto;
     margin-bottom: auto;
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .index{
@@ -58,4 +58,15 @@ td {
 .heading {
     font-size: 20px;
     font-weight: 600;
+}
+
+.car-image {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 72px;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
