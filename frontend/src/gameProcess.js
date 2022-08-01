@@ -76,3 +76,15 @@ export const getScores = async (gameId) => {
 
     return gameSnap.data()
 }
+
+// export const setScore = async (gameId, playerId) => {
+//     let gameRef = doc(db, 'games',gameId)
+//     let userRef = doc(db, 'users', playerId)
+//     const gameSnap = await getDoc(gameRef)
+//     const players = gameSnap.participants
+//     console.log(gameSnap, players)
+    
+//     for (let i=0; i<players.length; i++) {
+//         const p = query(gameSnap, where('id', '==', playerId))
+//     }
+// }
