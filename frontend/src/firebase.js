@@ -12,7 +12,7 @@ const firebaseConfig = {
     messagingSenderId: "189062568084",
     appId: "1:189062568084:web:44a974be347aae484dbc81",
     measurementId: "G-6M856T54EX"
-  };
+  }; //works until december 2022
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
