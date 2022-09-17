@@ -7,7 +7,7 @@ export const HomeDescription = () => {
     let userId = localStorage.getItem("token")
     let link = ""
     if (userId == null) {
-        link = '/signup'
+        link = '/sign-up'
     } else {
         link = '/find-games'
     } 
