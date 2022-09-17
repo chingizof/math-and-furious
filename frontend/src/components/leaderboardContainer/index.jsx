@@ -17,14 +17,14 @@ export const LeaderboardContainer = ({}) => {
                         <tr>
                             <td className='index'>#1</td>
                             <td 
-                            className='name'>Chingiz
+                            className='name'>Chingiz Tuleubayev
                             <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} /></td>
                             <td className='score'>118</td>
                         </tr>
                         <tr>
                             <td className='index'>#2</td>
                             <td className='daun'>
-                                Murat
+                                Elon Musk
                                 <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} />
                             </td>
                             <td className='score'>98</td>
@@ -32,7 +32,7 @@ export const LeaderboardContainer = ({}) => {
                         <tr>
                             <td className='index'>#3</td>
                             <td>
-                                Zhanibek
+                                CZ
                                 <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} />
                             </td>
                             <td className='score'>78</td>
@@ -40,7 +40,7 @@ export const LeaderboardContainer = ({}) => {
                         <tr>
                             <td className='index'>#4</td>
                             <td>
-                                Aldiyar
+                                Jeff Bezos
                                 <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} />
                             </td>
                             <td className='score'>64</td>
@@ -48,7 +48,7 @@ export const LeaderboardContainer = ({}) => {
                         <tr>
                             <td className='index'>#5</td>
                             <td>
-                                Portabello Marshmello
+                                Mark Zuckerberg
                                 <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} />
                             </td>
                             <td className='score'>44</td>
@@ -56,7 +56,15 @@ export const LeaderboardContainer = ({}) => {
                         <tr>
                             <td className='index'>#6</td>
                             <td>
-                                Fourier Analysis
+                                Andrew Tate
+                                <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} />
+                            </td>
+                            <td className='score'>23</td>
+                        </tr>
+                        <tr>
+                            <td className='index'>#6</td>
+                            <td>
+                                Richard Branson
                                 <div className='car-image' style={{ backgroundImage: `url(/car.png)` }} />
                             </td>
                             <td className='score'>23</td>
