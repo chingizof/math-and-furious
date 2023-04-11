@@ -4,10 +4,10 @@ import { getScores } from '../../gameProcess'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
-//получаю массив игроков, на каждый индекс создаю scoreboard item
-//в scoreboard item передаю player id, name, score
+//receive array of players, for each index create scoreboard item
+//in scoreboard item provide (player id, name, score)
 
-//обновлять данные каждую секунду
+//update data each second
 
 export const Scoreboard = ({score, setStartTime, setGameTime}) => {
 
@@ -15,10 +15,10 @@ export const Scoreboard = ({score, setStartTime, setGameTime}) => {
     const [scores, setScores] = useState([])
     const [myInterval, setMyInterval] = useState(null);
 
-    function lalala () {
-        let bro = updateData();
+    function updScore () {
+        let itemScore = updateData();
 
-        bro.then(r => {
+        itemScore.then(r => {
             setScores(r.participants)
             setStartTime(r.startTime)
             // setGameTime(r.gameTime)
@@ -26,12 +26,12 @@ export const Scoreboard = ({score, setStartTime, setGameTime}) => {
     }
 
     // useEffect(() => {
-    //     lalala()
+    //     updScore()
     // }, [])
 
-    useEffect( () => {
+    useEffect(() => {
         let interval = setInterval(() => {
-            lalala()
+            updScore()
         },1000)
         setMyInterval(interval);
 
@@ -40,22 +40,11 @@ export const Scoreboard = ({score, setStartTime, setGameTime}) => {
         } // component will unmount;
     },[])
 
-    // setInterval(() => {
-    //     setScores(updateData())
-    // },1000)
-
     const updateData = async () => {
         // get values of other players
         const newScores = await getScores(gameId)
-        // setScores(newScores)
-        // console.log(scores)
         return newScores;
     }
-
-    // const waiting = async() => {
-
-    // }
-
 
     return(
         <div className='scoreboard'>
